@@ -456,8 +456,8 @@ This project is created for Appscrip assignment evaluation purposes.
 ## 👤 Author
 
 **[Your Name]**
-- GitHub: [your-username]
-- Email: [your-email@example.com]
+- GitHub: [[your-username](https://github.com/7981168267/Appscrip-task-katakam-koteswararao)]
+- Email: [katakamkoti142@gmail.com]
 
 ---
 
