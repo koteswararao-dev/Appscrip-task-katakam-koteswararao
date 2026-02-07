@@ -8,6 +8,12 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.13.1",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.5",
@@ -37,5 +43,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "A fully functional, responsive Product Listing Page built with React.js, implementing the Figma design specifications with clean code structure, SEO optimization, and minimal dependencies.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koteswararao-dev/Appscrip-task-katakam-koteswararao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koteswararao-dev/Appscrip-task-katakam-koteswararao/issues"
+  },
+  "homepage": "https://github.com/koteswararao-dev/Appscrip-task-katakam-koteswararao#readme"
 }
