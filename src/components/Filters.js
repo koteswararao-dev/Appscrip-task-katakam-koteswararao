@@ -93,6 +93,7 @@ const Filters = ({
   };
 
   const filterOptions = {
+    category: ['All', 'Electronics', 'Furniture', 'Accessories'],
     idealFor: ['All', 'Men', 'Women', 'Kids', 'Unisex'],
     occasion: ['All', 'Casual', 'Formal', 'Party', 'Sports'],
     work: ['All', 'Office', 'Home', 'Travel', 'Outdoor'],

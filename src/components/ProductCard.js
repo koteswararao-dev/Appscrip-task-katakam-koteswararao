@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import './ProductCard.css';
 
-const ProductCard = ({ product, onWishlistToggle, isWishlisted }) => {
+const ProductCard = ({ product, onWishlistToggle, isWishlisted, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleWishlistClick = (e) => {
     e.stopPropagation();
     if (onWishlistToggle) {
       onWishlistToggle(product.id);
+    }
+  };
+
+  const handleCardClick = () => {
+    if (onClick) {
+      onClick(product);
     }
   };
 
@@ -23,6 +29,8 @@ const ProductCard = ({ product, onWishlistToggle, isWishlisted }) => {
       className="product-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleCardClick}
+      style={{ cursor: 'pointer' }}
     >
       <div className="product-image-container">
         <img
@@ -39,8 +47,8 @@ const ProductCard = ({ product, onWishlistToggle, isWishlisted }) => {
           <span className="product-badge stock-badge">OUT OF STOCK</span>
         )}
         {isHovered && (
-          <button className="quick-view-btn" aria-label="Quick view">
-            Quick View
+          <button className="quick-view-btn" aria-label="Quick view" onClick={handleCardClick}>
+            View Details
           </button>
         )}
       </div>

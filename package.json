@@ -1,6 +1,6 @@
 {
-  "name": "appscrip-task-demo",
-  "version": "0.1.0",
+  "name": "rrstore",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
@@ -24,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node backend/server.js",
+    "seed": "node backend/seed.js"
   },
   "eslintConfig": {
     "extends": [
@@ -44,17 +46,13 @@
       "last 1 safari version"
     ]
   },
-  "description": "A fully functional, responsive Product Listing Page built with React.js, implementing the Figma design specifications with clean code structure, SEO optimization, and minimal dependencies.",
+  "description": "RRStore - Your one-stop online shop for electronics, furniture, and accessories",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/koteswararao-dev/Appscrip-task-katakam-koteswararao.git"
+    "url": "git+https://github.com/rrstore/rrstore.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/koteswararao-dev/Appscrip-task-katakam-koteswararao/issues"
-  },
-  "homepage": "https://github.com/koteswararao-dev/Appscrip-task-katakam-koteswararao#readme"
+  "keywords": ["rrstore", "ecommerce", "shopping", "online-store"],
+  "author": "RRStore",
+  "license": "ISC"
 }

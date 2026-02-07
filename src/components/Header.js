@@ -26,7 +26,7 @@ const Header = ({ onSearch, onCartClick, onFilterToggle }) => {
     <header className="header">
       {/* Promotional Banner */}
       <div className="promo-banner">
-        <p>Lorem ipsum dolor</p>
+        <p>Welcome to RRStore - Free Shipping on Orders Over $50!</p>
       </div>
 
       {/* Main Header */}
@@ -47,8 +47,8 @@ const Header = ({ onSearch, onCartClick, onFilterToggle }) => {
 
             {/* Logo - Centered */}
             <Link to="/" className="logo logo-centered">
-              <span className="logo-icon">M</span>
-              <span className="logo-text">LOGO</span>
+              <span className="logo-icon">RR</span>
+              <span className="logo-text">STORE</span>
             </Link>
 
             {/* Header Actions - Right Side */}
