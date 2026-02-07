@@ -1,476 +1,232 @@
-# Appscrip Task - Product Listing Page (PLP)
+# E-Commerce Demo Project
 
-A fully functional, responsive Product Listing Page built with React.js, implementing the Figma design specifications with clean code structure, SEO optimization, and minimal dependencies.
+A complete end-to-end e-commerce demo application with single device login authentication.
 
-## 📋 Table of Contents
+## Features
 
-- [Project Overview](#project-overview)
-- [Task Requirements](#task-requirements)
-- [Live Demo](#live-demo)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Installation & Setup](#installation--setup)
-- [Project Structure](#project-structure)
-- [Requirements Checklist](#requirements-checklist)
-- [SEO Implementation](#seo-implementation)
-- [Deployment](#deployment)
-- [Code Quality](#code-quality)
-
----
-
-## 🎯 Project Overview
-
-This project is a complete implementation of a Product Listing Page (PLP) based on the provided Figma design. The application features a responsive design, advanced filtering, search functionality, and is optimized for SEO and performance.
-
-**Design Source**: [Figma Design File](https://www.figma.com/file/N0Tv7yYLf3kfMLQjUncUlx/Design-Task---PLP?type=design&node-id=0-1&mode=design&t=mEpvVYQ7GInQPxXk-0)
-
----
-
-## 📝 Task Requirements
-
-This project addresses all requirements specified in the Appscrip task:
-
-### 1. ✅ HTML & CSS Implementation
-- Implemented using React.js with component-based CSS
-- Pure CSS (no Bootstrap, Tailwind, or other CSS frameworks)
-- Responsive design with media queries
-- Clean, maintainable stylesheet structure
-
-### 2. ✅ React.js Framework
-- Built with React.js using Create React App
-- Functional components with React Hooks
-- Component-based architecture
-- React Router for navigation
-
-### 3. ⚠️ Server-Side Rendering (SSR)
-- **Current**: Client-Side Rendering (CSR) with Create React App
-- **SEO Optimization**: Implemented comprehensive SEO strategies including:
-  - Meta tags in `public/index.html`
-  - Dynamic JSON-LD structured data (Schema.org)
-  - Semantic HTML5 markup
-  - Pre-rendering capabilities
-- **Note**: For production SSR, migration to Next.js is recommended
-
-### 4. ✅ Responsive Design
-- **Mobile**: < 768px (optimized layout)
-- **Tablet**: 768px - 1024px (adapted grid)
-- **Desktop**: > 1024px (full-featured layout)
-- All components tested across devices
-
-### 5. ✅ Code Quality Standards
-
-#### a. Code Structure
-- Organized component structure in `src/components/`
-- Separation of concerns (components, pages, utilities)
-- Reusable, modular components
-- Clean file organization
-
-#### b. Naming Conventions
-- **Components**: PascalCase (e.g., `ProductCard.js`)
-- **Variables/Functions**: camelCase (e.g., `handleFilterChange`)
-- **CSS Classes**: kebab-case (e.g., `product-card`)
-- **Files**: Descriptive, meaningful names
-
-#### c. Minimum Pre-built Packages
-**Only Essential Dependencies**:
-- `react` (^19.2.0) - Core UI library
-- `react-dom` (^19.2.0) - DOM rendering
-- `react-router-dom` (^7.9.5) - Client-side routing
-- `axios` (^1.13.1) - HTTP client for API calls
-
-**No Heavy Frameworks**: No Bootstrap, Material-UI, Tailwind, or similar CSS frameworks
-
-#### d. Screen Size Fit
-- Responsive breakpoints: 480px, 768px, 1024px
-- Flexible grid layouts
-- Mobile-first approach
-- Touch-friendly interfaces
-
-#### e. Minimal DOM Size
-- Efficient React rendering
-- Minimal DOM nesting
-- Lazy loading for images
-- Code splitting ready
-
-### 6. ✅ SEO Settings
-
-#### a. Page Title
-- Location: `public/index.html`
-- Format: "Product Listing Page - Discover Our Products | realtime muse"
-- SEO-optimized with brand name
-
-#### b. Page Description
-- Meta description tag implemented
-- Location: `public/index.html`
-- Content: Descriptive, keyword-rich description
-
-#### c. H1 & H2 Tags
-- **H1**: "DISCOVER OUR PRODUCTS" (main page heading)
-- **H2**: "Browse Our Exclusive Collection" (subheading)
-- Proper heading hierarchy maintained across pages
-- Additional H2 tags in About, Contact, Skills, Stories pages
-
-#### d. Schema Settings
-- **JSON-LD Structured Data**: Implemented in `src/App.js`
-- **Schema.org Types**: ItemList, Product, Offer
-- **Dynamic Generation**: Based on filtered products
-- Location: Inline script in React component
-
-#### e. SEO-Friendly Image Names
-- Descriptive alt text based on product titles
-- Format: `{product.title} - Product Image`
-- Lazy loading implemented
-- Title attributes for enhanced SEO
-
-#### f. Alt Text on Images
-- All images have descriptive alt text
-- Product images: Dynamic alt based on product data
-- Location: `src/components/ProductCard.js`
-- Fallback text for missing product titles
-
-### 7. ✅ Netlify Hosting
-- Configuration file: `netlify.toml` included
-- Build settings configured
-- Redirect rules for React Router
-- Security headers implemented
-- **Status**: Ready for deployment
-
-### 8. ✅ GitHub Repository
-- Repository structure complete
-- Proper `.gitignore` file
-- **Action Required**: Rename repository to `Appscrip-task-[your-name]`
-- Comprehensive documentation included
-
-### 9. ✅ Mock API Integration
-- **API Used**: Fake Store API (https://fakestoreapi.com/)
-- Products fetched dynamically on page load
-- Error handling implemented
-- Loading states implemented
-- Image reuse functionality for demonstration
-
----
-
-## 🔗 Live Demo
-
-- **GitHub Repository**: `https://github.com/yourusername/Appscrip-task-[your-name]`
-- **Live Demo (Netlify)**: `https://your-site-name.netlify.app`
-- **Figma Design**: [View Design](https://www.figma.com/file/N0Tv7yYLf3kfMLQjUncUlx/Design-Task---PLP?type=design&node-id=0-1&mode=design&t=mEpvVYQ7GInQPxXk-0)
-
-> **Note**: Update the above URLs after deployment and repository setup.
-
----
-
-## 🚀 Features
-
-### Core Functionality
-- ✅ Product listing with responsive grid layout
-- ✅ Advanced filtering (category, price range, customizable, etc.)
-- ✅ Multiple sorting options (Recommended, Newest, Most Popular, Price)
-- ✅ Real-time search functionality
-- ✅ Wishlist feature with local state
-- ✅ Responsive navigation (desktop menu, mobile hamburger)
-- ✅ Footer with newsletter subscription
-- ✅ Loading and error states
-
-### Technical Features
-- ✅ SEO optimized (meta tags, JSON-LD schema, semantic HTML)
-- ✅ Accessible (ARIA labels, keyboard navigation)
-- ✅ Pure CSS (no CSS frameworks)
-- ✅ Minimal dependencies (only essential packages)
-- ✅ Optimized DOM structure
-- ✅ Lazy loading images
-- ✅ Error boundaries ready
-
----
-
-## 🛠️ Technology Stack
+### Backend
+- Node.js with Express
+- MongoDB with Mongoose
+- JWT authentication with single device login enforcement
+- bcrypt password hashing
+- RESTful API endpoints
 
 ### Frontend
-- **React.js** (v19.2.0) - UI library
-- **React Router DOM** (v7.9.5) - Client-side routing
-- **Axios** (v1.13.1) - HTTP client
-- **CSS3** - Pure CSS for styling
+- React (Create React App)
+- Axios for API calls
+- Clean and responsive UI
+- Login/Signup screens
+- Items listing with cart functionality
+- Order management
 
-### Build Tools
-- **Create React App** (v5.0.1) - Build tooling
-- **React Scripts** - Build and development scripts
+### Security
+- Single device login: Only one active session per user
+- JWT token stored in User document
+- Token verification on every protected route
+- Automatic logout on token mismatch
 
-### API
-- **Fake Store API** - Product data source (https://fakestoreapi.com/)
+## Database Models
 
----
+- **User**: username, password (hashed), token
+- **Item**: name, status
+- **Cart**: user_id, status
+- **CartItem**: cart_id, item_id
+- **Order**: user_id, cart_id
 
-## 📦 Installation & Setup
+## API Endpoints
+
+### Users
+- `POST /users` - Sign up
+- `GET /users` - List all users
+- `POST /users/login` - Login
+- `POST /users/logout` - Logout (requires auth)
+
+### Items
+- `POST /items` - Create item
+- `GET /items` - List all items
+
+### Carts
+- `POST /carts` - Add item to cart (requires auth)
+- `GET /carts` - List user's cart items (requires auth)
+
+### Orders
+- `POST /orders` - Convert cart to order (requires auth)
+- `GET /orders` - List user's orders (requires auth)
+
+## Setup Instructions
 
 ### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (running locally or connection string)
 
-- **Node.js** (v14 or higher) - [Download](https://nodejs.org/)
-- **npm** (comes with Node.js) or **yarn**
-- **Git** - [Download](https://git-scm.com/)
+### Backend Setup
 
-### Installation Steps
+1. Install dependencies:
+```bash
+npm install
+```
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/Appscrip-task-[your-name].git
-   cd Appscrip-task-[your-name]
-   ```
+2. Configure environment variables:
+Create/edit `backend/.env`:
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/ecommerce-demo
+JWT_SECRET=supersecretkey123
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+3. Start MongoDB:
+```bash
+# On Windows
+net start MongoDB
 
-3. **Start development server**
-   ```bash
-   npm start
-   ```
-   The application will open at [http://localhost:3000](http://localhost:3000)
+# On Mac/Linux
+sudo systemctl start mongod
+```
 
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-   Creates an optimized production build in the `build/` folder
+4. Seed the database with sample items:
+```bash
+node backend/seed.js
+```
 
-5. **Test production build locally**
-   ```bash
-   npm install -g serve
-   serve -s build
-   ```
+5. Start the backend server:
+```bash
+node backend/server.js
+```
 
----
+Backend will run on http://localhost:5000
 
-## 📁 Project Structure
+### Frontend Setup
+
+1. Create `.env` file in root directory:
+```
+REACT_APP_API_URL=http://localhost:5000
+```
+
+2. Start the React development server:
+```bash
+npm start
+```
+
+Frontend will run on http://localhost:3000
+
+## Usage Guide
+
+### 1. Sign Up / Login
+- Open http://localhost:3000
+- Create a new account or login with existing credentials
+- If user is already logged in on another device, login will be denied
+
+### 2. Browse Items
+- After login, view all available items
+- Click "Add to Cart" on any item to add it to your cart
+
+### 3. View Cart
+- Click "Cart" button to see items in your cart
+- Cart shows all items you've added
+
+### 4. View Order History
+- Click "Order History" to see your past orders
+- Shows order IDs for all completed orders
+
+### 5. Checkout
+- Click "Checkout" to convert your cart into an order
+- Success message will appear
+- Cart will be cleared after successful checkout
+
+### 6. Logout
+- Click "Logout" to end your session
+- Token will be cleared from database
+
+## Business Rules
+
+- One user can have only one active cart at a time
+- Clicking an item adds it to the cart
+- Checkout converts the active cart into an order
+- After order creation, the cart status changes to "ordered"
+- User must create a new cart for subsequent purchases
+
+## Single Device Login Implementation
+
+The application enforces single device login through:
+
+1. **Login**: Token is generated and stored in User document
+2. **Existing Session Check**: If token exists and is valid, login is denied
+3. **Auth Middleware**: Verifies JWT AND matches it with DB token
+4. **Logout**: Clears token from User document
+5. **Token Mismatch**: If tokens don't match, request is rejected
+
+## Project Structure
 
 ```
-Appscrip-task-[your-name]/
-├── public/
-│   ├── index.html              # HTML with SEO meta tags
-│   ├── manifest.json
-│   └── favicon.ico
+├── backend/
+│   ├── middleware/
+│   │   └── auth.js          # Authentication middleware
+│   ├── models/
+│   │   ├── User.js          # User model
+│   │   ├── Item.js          # Item model
+│   │   ├── Cart.js          # Cart model
+│   │   ├── CartItem.js      # CartItem model
+│   │   └── Order.js         # Order model
+│   ├── routes/
+│   │   ├── users.js         # User routes
+│   │   ├── items.js         # Item routes
+│   │   ├── carts.js         # Cart routes
+│   │   └── orders.js        # Order routes
+│   ├── .env                 # Environment variables
+│   ├── seed.js              # Database seeding script
+│   └── server.js            # Express server
 ├── src/
 │   ├── components/
-│   │   ├── Header.js           # Header component with navigation
-│   │   ├── Header.css
-│   │   ├── Filters.js          # Filter sidebar component
-│   │   ├── Filters.css
-│   │   ├── ProductCard.js      # Individual product card
-│   │   ├── ProductCard.css
-│   │   ├── ProductGrid.js      # Product grid container
-│   │   ├── ProductGrid.css
-│   │   ├── Footer.js           # Footer component
-│   │   └── Footer.css
-│   ├── pages/
-│   │   ├── About.js            # About page
-│   │   ├── Contact.js          # Contact page
-│   │   ├── Skills.js           # Skills page
-│   │   ├── Stories.js          # Stories page
-│   │   ├── Shop.js             # Shop page placeholder
-│   │   └── Pages.css           # Shared page styles
-│   ├── App.js                  # Main app component
-│   ├── App.css                 # Global styles
-│   ├── index.js                # React entry point
-│   └── index.css               # Base styles
-├── netlify.toml                # Netlify deployment config
-├── package.json                # Dependencies and scripts
-├── README.md                   # This file
-├── DEPLOYMENT_GUIDE.md         # Deployment instructions
-├── REQUIREMENTS_CHECKLIST.md   # Requirements checklist
-└── TASK_SUBMISSION_SUMMARY.md  # Submission summary
+│   │   ├── Login.js         # Login/Signup component
+│   │   ├── Login.css        # Login styles
+│   │   ├── ItemsList.js     # Items listing component
+│   │   └── ItemsList.css    # Items styles
+│   ├── App.js               # Main app component
+│   ├── App.css              # App styles
+│   └── index.js             # React entry point
+├── package.json
+└── README.md
 ```
 
----
+## Testing the Application
 
-## ✅ Requirements Checklist
+### Test Single Device Login
 
-| Requirement | Status | Implementation |
-|------------|--------|----------------|
-| HTML & CSS | ✅ | React with CSS modules |
-| React.js Framework | ✅ | Create React App |
-| SSR | ⚠️ | CSR with SEO optimization |
-| Responsive Design | ✅ | Mobile, tablet, desktop |
-| Code Structure | ✅ | Organized components |
-| Naming Convention | ✅ | Best practices followed |
-| Minimum Packages | ✅ | Only essential packages |
-| Screen Size Fit | ✅ | Fully responsive |
-| Minimal DOM | ✅ | Optimized structure |
-| Page Title | ✅ | SEO optimized |
-| Page Description | ✅ | Meta tags |
-| H1 & H2 Tags | ✅ | Proper hierarchy |
-| Schema Settings | ✅ | JSON-LD implemented |
-| Image SEO Names | ✅ | Descriptive alt text |
-| Alt Text | ✅ | All images covered |
-| Netlify Config | ✅ | `netlify.toml` ready |
-| GitHub Repo | ⚠️ | Needs renaming |
-| Mock API | ✅ | Fake Store API |
+1. Login with a user account in one browser
+2. Try to login with the same account in another browser/incognito window
+3. You should see: "User already logged in on another device"
+4. Logout from the first browser
+5. Now you can login from the second browser
 
-**Overall Completion: 95%** ✅
+### Test Cart and Orders
 
----
+1. Login to the application
+2. Add multiple items to cart
+3. Click "Cart" to verify items are added
+4. Click "Checkout" to create an order
+5. Click "Order History" to see the order ID
+6. Try adding more items - a new cart will be created
 
-## 🔍 SEO Implementation
+## Technologies Used
 
-### Meta Tags (`public/index.html`)
-- ✅ Title tag: "Product Listing Page - Discover Our Products | realtime muse"
-- ✅ Meta description: SEO-optimized description
-- ✅ Meta keywords: Relevant keywords
-- ✅ Open Graph tags: Facebook sharing
-- ✅ Twitter Card tags: Twitter sharing
-- ✅ Robots meta: Index, follow
-- ✅ Language meta: English
+### Backend
+- Express.js - Web framework
+- Mongoose - MongoDB ODM
+- bcryptjs - Password hashing
+- jsonwebtoken - JWT authentication
+- cors - Cross-origin resource sharing
+- dotenv - Environment variables
 
-### Structured Data
-- ✅ JSON-LD schema in `src/App.js`
-- ✅ Schema.org ItemList type
-- ✅ Product schema with offers
-- ✅ Dynamic generation based on products
+### Frontend
+- React - UI library
+- Axios - HTTP client
+- CSS3 - Styling
 
-### Semantic HTML
-- ✅ Proper use of `<header>`, `<main>`, `<section>`, `<article>`, `<footer>`
-- ✅ Heading hierarchy (H1, H2, H3)
-- ✅ ARIA labels for accessibility
-- ✅ Form labels and inputs
+## Notes
 
-### Image Optimization
-- ✅ Descriptive alt text for all images
-- ✅ Lazy loading implemented
-- ✅ Title attributes for enhanced SEO
-
----
-
-## 🚢 Deployment
-
-### Deploy to Netlify
-
-#### Quick Deploy (Recommended)
-1. Push code to GitHub
-2. Go to [Netlify](https://app.netlify.com/)
-3. Click "New site from Git"
-4. Connect GitHub repository
-5. Configure build settings:
-   - **Build command**: `npm run build`
-   - **Publish directory**: `build`
-6. Click "Deploy site"
-
-#### Manual Deploy
-1. Build the project: `npm run build`
-2. Go to [Netlify Drop](https://app.netlify.com/drop)
-3. Drag the `build` folder to Netlify
-
-**Detailed instructions**: See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
-
----
-
-## 💻 Code Quality
-
-### Standards Followed
-- ✅ ES6+ JavaScript syntax
-- ✅ Functional components with Hooks
-- ✅ Component-based architecture
-- ✅ Minimal DOM nesting
-- ✅ Clean, readable code
-- ✅ Consistent naming conventions
-- ✅ Proper code comments
-
-### Best Practices
-- ✅ Separation of concerns
-- ✅ Reusable components
-- ✅ Proper state management
-- ✅ Error handling
-- ✅ Loading states
-- ✅ Performance optimization
-
-### Performance
-- ✅ Lazy loading images
-- ✅ Optimized bundle size
-- ✅ Efficient re-renders
-- ✅ Code splitting ready
-
----
-
-## 🎨 Design Implementation
-
-### Responsive Breakpoints
-- **Desktop**: > 1024px (3-4 product columns)
-- **Tablet**: 768px - 1024px (2-3 product columns)
-- **Mobile**: < 768px (1-2 product columns)
-- **Small Mobile**: < 480px (1 column)
-
-### Color Scheme
-- **Primary**: #000000 (Black)
-- **Secondary**: #FFFFFF (White)
-- **Text**: #333333 (Dark Gray)
-- **Border**: #E5E5E5 (Light Gray)
-- **Accent**: #FF0000 (Red for wishlist)
-- **Banner**: #FFC0CB (Pink promotional banner)
-
----
-
-## 🧪 Testing
-
-### Manual Testing
-- ✅ Products load from API
-- ✅ Filters work correctly
-- ✅ Search functionality
-- ✅ Sorting options
-- ✅ Wishlist toggle
-- ✅ Responsive design on all devices
-- ✅ Mobile navigation
-- ✅ Form submissions
-
-### Browser Compatibility
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-
----
-
-## 📚 Additional Documentation
-
-- **[DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)** - Step-by-step deployment instructions
-- **[REQUIREMENTS_CHECKLIST.md](./REQUIREMENTS_CHECKLIST.md)** - Detailed requirements checklist
-- **[TASK_SUBMISSION_SUMMARY.md](./TASK_SUBMISSION_SUMMARY.md)** - Complete submission summary
-
----
-
-## 🤝 Contributing
-
-This project was created for Appscrip assignment purposes. For contributions:
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is created for Appscrip assignment evaluation purposes.
-
----
-
-## 👤 Author
-
-**[Your Name]**
-- GitHub: [[your-username](https://github.com/7981168267/Appscrip-task-katakam-koteswararao)]
-- Email: [katakamkoti142@gmail.com]
-
----
-
-## 🙏 Acknowledgments
-
-- **Fake Store API** - [https://fakestoreapi.com/](https://fakestoreapi.com/) for providing free product data
-- **Appscrip Team** - For the design specifications and assignment
-- **React Community** - For the excellent React library and ecosystem
-
----
-
-**Built with React.js | Optimized for Performance | SEO-Friendly**
-
----
-
-> **Note**: This project demonstrates proficiency in React.js development, responsive design, SEO optimization, and clean code practices as per Appscrip task requirements.
+- This is a demo project for learning purposes
+- In production, use HTTPS and secure JWT secrets
+- Consider adding password strength validation
+- Add input validation and sanitization
+- Implement rate limiting for API endpoints
+- Add proper error logging and monitoring

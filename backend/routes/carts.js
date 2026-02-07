@@ -44,24 +44,37 @@ router.post('/', async (req, res) => {
             await cart.save();
         }
 
-        // Check if item already in cart? "Clicking an item adds it to the cart".
-        // Usually we increment quantity, but CartItem model is simple: cart_id, item_id. 
-        // And requirements: "CartItem: cart_id, item_id". No quantity.
-        // So I will just add another row. Multiple rows = multiple quantity.
-        // Or I could prevent duplicates if "One user can have only one active cart" implies single items? 
-        // "Clicking an item adds it to the cart". Usually implies adding to list.
-        // I'll allow duplicates (multiple rows) as the simplest interpretation of the schema.
-
         const cartItem = new CartItem({
             cart_id: cart._id,
             item_id: item_id
         });
 
         await cartItem.save();
-
-        // Return cart items or just success? "POST /carts".
-        // I'll return the added item.
         res.json(cartItem);
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// DELETE /carts/:id - Remove item from cart
+router.delete('/:id', async (req, res) => {
+    try {
+        const cartItem = await CartItem.findById(req.params.id);
+        
+        if (!cartItem) {
+            return res.status(404).json({ message: 'Cart item not found' });
+        }
+
+        // Verify the cart belongs to the user
+        const cart = await Cart.findById(cartItem.cart_id);
+        if (!cart || cart.user_id.toString() !== req.user.id) {
+            return res.status(403).json({ message: 'Not authorized' });
+        }
+
+        await CartItem.findByIdAndDelete(req.params.id);
+        res.json({ message: 'Item removed from cart' });
 
     } catch (err) {
         console.error(err);
